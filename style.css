@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #efefef;
+}
+.mainContainer {
+  width: 1330px;
+  height: 580px;
+  position: relative;
+  top: 30px;
+  left: 32px;
+  bottom: 30px;
+  background-color: white;
+  border-radius: 25px;
+}
+.TopHeading {
+  font-size: 50px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+.headingDiv {
+  position: relative;
+  top: 20px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.imgDiv {
+  height: 400px;
+  width: 400px;
+}
+button {
+  background-color: #000000;
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 10px 10px rgb(240, 238, 238);
+  border-radius: 10px;
+  position: relative;
+  left: 340px;
+  top: 43px;
+}
+button:active {
+  box-shadow: 10px 6px rgb(240, 238, 238);
+  transform: translateY(4px);
+}
+.headingDiv {
+  position: relative;
+  top: 20px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.picDiv {
+  font-weight: bold;
+  color: #c5c3c3;
+}
