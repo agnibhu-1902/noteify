@@ -7,12 +7,14 @@ body {
   background-color: #efefef;
 }
 .mainContainer {
-  width: 1330px;
-  height: 580px;
+  width: fit-content;
+  height: fit-content;
   position: relative;
   top: 30px;
-  left: 32px;
+  left: 30px;
   bottom: 30px;
+  right: 30px;
+  padding: 5% 16% 5% 5%;
   background-color: white;
   border-radius: 25px;
 }
@@ -47,7 +49,8 @@ button {
 }
 button:active {
   box-shadow: 10px 6px rgb(240, 238, 238);
-  transform: translateY(4px);
+  transition-duration: 0.1s;
+  transform: translate3D(4px, 4px, 4px);
 }
 .headingDiv {
   position: relative;
