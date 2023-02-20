@@ -40,7 +40,7 @@ CREATE TABLE `Users` (
 --
 
 INSERT INTO `Users` (`User_id`, `Username`, `Email`, `Password_hash`, `Timestamp`) VALUES
-(2, 'abc', 'abc@example.com', '$2y$10$fjVf34yfqRPM1Xx13Akhi.42UzM5eeZVQS7ylsmkwRBUSATj62jIu', '2023-02-20');
+(0, 'abc', 'abc@example.com', '$2y$10$fjVf34yfqRPM1Xx13Akhi.42UzM5eeZVQS7ylsmkwRBUSATj62jIu', '2023-02-20');
 
 --
 -- Indexes for dumped tables
