@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <?php require("connect.php"); ?>
     <meta charset="utf-8" />
-    <title>noteify</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Noteify: Login</title>
+    <link rel="stylesheet" href="signup.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://kit.fontawesome.com/b01ebee570.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <div class="wrapper">
       <div class="title-text">
-        <div class="title login">noteify</div>
-        <div class="title signup">noteify</div>
+        <div class="title login">Noteify</div>
+        <div class="title signup">Noteify</div>
       </div>
       <div class="form-container">
         <div class="slide-controls">
@@ -22,14 +23,14 @@
           <div class="slider-tab"></div>
         </div>
         <div class="form-inner">
-          <form action="#" class="login">
+          <form method="post" action="login.php" class="login">
             <div class="field">
-             <i class="fa-solid fa-envelope"></i>
-              <input type="text" placeholder="Email Address" required />
+              <i class="fa-solid fa-user"></i>
+              <input type="text" name="user" placeholder="Username" required />
             </div>
             <div class="field">
               <i class="fa-solid fa-lock"></i>
-              <input type="password" placeholder="Password" required />
+              <input type="password" name="password" placeholder="Password" required />
             </div>
             <div class="pass-link"><a href="#">Forgot password?</a></div>
             <div class="field btn">
@@ -40,18 +41,22 @@
               Not a member? <a href="">Signup now</a>
             </div>
           </form>
-          <form action="#" class="signup">
+          <form method="post" action="signup.php" class="signup">
+            <div class="field">
+              <i class="fa-solid fa-user"></i>
+              <input type="text" name="user" placeholder="Username" required />
+            </div>
             <div class="field">
               <i class="fa-solid fa-envelope"></i>
-              <input type="text" placeholder="Email Address" required />
+              <input type="email" name="email" placeholder="Email Address" required />
             </div>
             <div class="field">
               <i class="fa-solid fa-lock"></i>
-              <input type="password" placeholder="Password" required />
+              <input type="password" name="password" placeholder="Password" required />
             </div>
             <div class="field">
               <i class="fa-solid fa-lock"></i>
-              <input type="password" placeholder="Confirm password" required />
+              <input type="password" name="cpassword" placeholder="Confirm password" required />
             </div>
             <div class="field btn">
               <div class="btn-layer"></div>
@@ -61,7 +66,6 @@
         </div>
       </div>
     </div>
-
     <script>
       const loginText = document.querySelector(".title-text .login");
       const loginForm = document.querySelector("form.login");
@@ -81,5 +85,21 @@
         return false;
       };
     </script>
+    <?php
+        $user = $_POST['user'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $cpassword = $_POST['cpassword'];
+        $hash = password_hash($password, PASSWORD_DEFAULT);
+        if ($password == $cpassword)
+        {
+          $sql = "INSERT INTO Users(Username, Email, Password_hash) VALUES('$user', '$email', '$hash')";
+          $result = $conn->query($sql);
+          if (!$result)
+            echo "Cannot insert: " . $conn->error;
+        }
+        else
+          echo '<br><span style="color: red">Passwords do not match!</span>';
+    ?>
   </body>
 </html>
