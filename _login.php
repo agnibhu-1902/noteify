@@ -1,5 +1,5 @@
 <?php
-    require('connect.php');
+    require '_connect.php';
     $username = $_POST['username'];
     $password = $_POST['password'];
     $sql = "SELECT Username, Password_hash FROM Users";
@@ -14,7 +14,7 @@
                 {
                     session_start();
                     $_SESSION['username'] = $username;
-                    header("Location: homepage.html");
+                    header("Location: homepage.php");
                 }
                 else
                 {

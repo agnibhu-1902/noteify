@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <?php require("connect.php"); ?>
+    <?php require "_connect.php"; ?>
     <meta charset="utf-8" />
     <title>Noteify: Login</title>
     <link rel="stylesheet" href="auth.css" />
@@ -23,7 +23,7 @@
           <div class="slider-tab"></div>
         </div>
         <div class="form-inner">
-          <form method="post" action="login.php" class="login">
+          <form method="post" action="_login.php" class="login">
             <div class="field">
               <i class="fa-solid fa-user"></i>
               <input type="text" name="username" placeholder="Username" required />
@@ -47,7 +47,7 @@
               ?>
             </center>
           </form>
-          <form method="post" action="signup.php" class="signup">
+          <form method="post" action="_signup.php" class="signup">
             <div class="field">
               <i class="fa-solid fa-user"></i>
               <input type="text" name="username" placeholder="Username" required />
