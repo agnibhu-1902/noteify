@@ -10,3 +10,7 @@ jobs:
     environment: 
       name: Production
       url: http://www.noteify.infinityfreeapp.com
+  
+    steps:
+        - name: Checkout
+          uses: actions/checkout@v2
