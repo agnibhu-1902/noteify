@@ -1,3 +1,3 @@
 # noteify
 
-### Currently under construction.
+### Currently under construction. Stay tuned!
